@@ -2,8 +2,7 @@ import type { LabeledControls, NiceForm } from "./deps.ts";
 
 const niceForm = document.getElementById("ogImageForm") as NiceForm;
 const ogImagePreview = document.getElementById("ogImagePreview")!;
-const defaultImageUrl =
-  new URL(`/assets/design/logos/hashrock_simple.png`, location.origin).href;
+const defaultImageUrl = "https://deno.land/images/artwork/hashrock_simple.png";
 
 function update(img: HTMLElement) {
   return (labeledControls: LabeledControls) => {
