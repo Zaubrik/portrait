@@ -1,6 +1,7 @@
 {
   "tasks": {
     "serve": "deno run -A server.ts",
+    // Needs a tsconfig.json for browser types. Fix soon.
     "bundle": "deno bundle static/src/index.ts > static/dist/index.js"
   },
   "compilerOptions": {
