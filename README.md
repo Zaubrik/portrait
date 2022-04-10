@@ -1,25 +1,25 @@
 # portrait
 
-Portrait is a service that generates dynamic Open Graph (og) images that you can
-embed in your `meta` tags written in [Deno](https://deno.land/). Try it out on
-[Zaubrik](https://portrait.zaubrik.com) for free.
+Portrait is a service, written in Deno, that generates dynamic
+[Open Graph](http://ogp.me) images that you can embed in your `meta` tags. Try
+it out on [Zaubrik](https://portrait.zaubrik.com) for free.
 
 ## What is this?
 
 <img src="./portrait_zaubrik-2022-04-10.png" alt="Portrait preview" width="50%" align="right" style="padding: 12px">
 This is a service that for each keystroke generates customized dynamic
-[Open Graph](http://ogp.me) images that you can embed in your <code>meta</code> tags.
+ images that you can embed in your <code>meta</code> tags.
 Lots of services like Twitter, Discord and LinkedIn can render the specified
 image to make your link stand out from the rest!
 
 ## How does it work?
 
-In short, what this service does, is take in a request through its API, generate
-an [HTML Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
-using the provided variables and respond with an image having the appropriate
-image properties and headers. Find out more and deploy your own image generator
-on [Deno](https://deno.land/) by visiting
-[GitHub](https://github.com/Zaubrik/portrait).
+In short, what this service does, is take in a request through its REST API,
+generate an
+[HTML Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) using
+the provided variables and respond with an image having the appropriate image
+properties and headers. Try it out and deploy your own image generator on
+[Deno](https://deno.land/).
 
 ## Todo
 
