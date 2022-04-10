@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Open Graph Image as a Service</title>
+    <meta
+      name="description"
+      content="This is a service that generates dynamic Open Graph images that you can embed in your meta tags."
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="paddingNormal">
+        <h1>Open Graph Image as a Service</h1>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="flexContainer">
+          <div id="formWrapper">
+            <div class="paddingNormal">
+              <nice-form id="ogImageForm"></nice-form>
+            </div>
+          </div>
+          <div id="previewWrapper">
+            <div class="paddingNormal">
+              <img id="ogImagePreview" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="flexContainer">
+          <div>
+            <header>
+              <h2>What is this?</h2>
+            </header>
+            <div class="paddingNormal">
+              <p>
+                This is a service that for each keystroke generates customized
+                dynamic
+                <a href="http://ogp.me">Open Graph</a> images that you can embed
+                in your <code>&lt;meta&gt;</code> tags. Lots of services like
+                Twitter, Discord and LinkedIn can render the specified image to
+                make your link stand out from the rest!
+              </p>
+            </div>
+          </div>
+          <div>
+            <header>
+              <h2>How does it work?</h2>
+            </header>
+            <div class="paddingNormal">
+              <p>
+                In short, what this service does, is take in a request through
+                its API, generate an
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
+                  target="_blank"
+                  >HTML Canvas</a
+                >
+                using the provided variables and respond with an image having
+                the appropriate image properties and headers. Find out more and
+                deploy your own image generator on
+                <a href="https://deno.land/" target="_blank">Deno</a> by
+                visiting
+                <a href="https://github.com/Zaubrik/portrait" target="_blank"
+                  >GitHub</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="paddingNormal">
+          <p>
+            <i>Proudly hosted on</i>
+            <a href="https://zaubrik.com">Zaubrik</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="./dist/index.js"></script>
+  </body>
+</html>

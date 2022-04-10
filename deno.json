@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "serve": "deno run -A server.ts",
+    "bundle": "deno bundle static/src/index.ts > static/dist/index.js"
+  },
+  "compilerOptions": {
+    // "lib": ["esnext", "es2017", "dom", "dom.iterable", "deno.ns"],
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "importsNotUsedAsValues": "preserve"
+  }
+}
