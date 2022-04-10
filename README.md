@@ -8,7 +8,7 @@ embed in your `meta` tags written in [Deno](https://deno.land/). Try it out on
 
 <img src="./portrait_zaubrik-2022-04-10.png" alt="Portrait preview" width="50%" align="right" style="padding: 12px">
 This is a service that for each keystroke generates customized dynamic
-[Open Graph](http://ogp.me) images that you can embed in your `\<meta>` tags.
+[Open Graph](http://ogp.me) images that you can embed in your <code>meta</code> tags.
 Lots of services like Twitter, Discord and LinkedIn can render the specified
 image to make your link stand out from the rest!
 
@@ -32,17 +32,17 @@ on [Deno](https://deno.land/) by visiting
     from the Canvas API and RegExp?
 
   ```ts
-  const regexBold = /\*\*([^*]*)\*\*/g
-  const regexItalic = /\*([^*]*)\*/g
+  const regexBold = /\*\*([^*]*)\*\*/g;
+  const regexItalic = /\*([^*]*)\*/g;
 
   function parse(regExp: RegExp) {
     return (str: string) => {
-      return [...str.matchAll(regExp)]
-    }
+      return [...str.matchAll(regExp)];
+    };
   }
 
-  const parseBold = parse(regexBold)
-  const parseItalic = parse(regexItalic)
+  const parseBold = parse(regexBold);
+  const parseItalic = parse(regexItalic);
 
-  let r1 = parseBold("aaa bb**ff**ccc,c**cc d**dd")
+  let r1 = parseBold("aaa bb**ff**ccc,c**cc d**dd");
   ```
