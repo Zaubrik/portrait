@@ -11,7 +11,7 @@ function update(img: HTMLElement) {
       .filter(([_key, value]) => !!value)
       .filter(([key, _value]) => key !== "textInput");
     const searchParams = new URLSearchParams(processedInput);
-    const url = new URL(`/${input.textInput}.png`, location.origin);
+    const url = new URL(`./${input.textInput}.png`, location.href);
     url.search = searchParams.toString();
     img.setAttribute("src", url.href);
   };

@@ -2,7 +2,7 @@
 
 Portrait is a service, written in Deno, that generates dynamic
 [Open Graph](http://ogp.me) images that you can embed in your `meta` tags. Try
-it out on [Zaubrik](https://dev.zaubrik.com/portrait) for free.
+it out on [Zaubrik](https://dev.zaubrik.com/portrait/) for free.
 
 ## What is this?
 
