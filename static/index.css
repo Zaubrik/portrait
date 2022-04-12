@@ -134,6 +134,9 @@ nice-form {
   --niceFormSubmitMessageColor: var(--accentColor);
   --niceFormSubmitErrorMessageColor: var(--accentColor);
 }
+nice-form::part(submit) {
+  font-family: Arial, Helvetica, sans-serif;
+}
 #ogImagePreview {
   border-radius: 4px;
   box-shadow: var(--cardShadow);
