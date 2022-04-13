@@ -2,6 +2,7 @@
   box-sizing: border-box;
   font-family: ui-sans-serif, system-ui, sans-serif;
   --titleColor: #0a2540;
+  --textColor: #425466;
   --accentColor: #635bff;
   --backgroundColor: #fff;
   --cardBackground: #fff;
@@ -58,6 +59,7 @@
 }
 body {
   margin: 0 auto;
+  color: var(--textColor);
 }
 header,
 section {
@@ -74,6 +76,7 @@ h1 {
 h1,
 h2 {
   margin: 0;
+  color: var(--titleColor);
 }
 p {
   font-size: 18.5px;
