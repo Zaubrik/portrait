@@ -23,7 +23,8 @@ properties and headers. Try it out and deploy your own image generator on
 
 ## Todo
 
-- More features
+- More options
+- What about caching?
 - Some browser tests
 - Add markdown's **bold** and _italic_ syntax to the text input.
 
