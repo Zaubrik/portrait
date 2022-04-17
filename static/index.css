@@ -17,11 +17,6 @@
     0 8px 16px -8px rgba(0, 0, 0, 0.3);
   --cardShadowLarge: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
     0 18px 36px -18px rgba(0, 0, 0, 0.3);
-  --cardShadowLargeInset: inset 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-    inset 0 18px 36px -18px rgba(0, 0, 0, 0.3);
-  --cardShadowXLarge: 0 50px 100px -20px rgb(50 50 93 / 25%),
-    0 30px 60px -30px rgb(0 0 0 / 30%), 0 -18px 60px -10px rgb(0 0 0 / 3%);
-  --cardShadow: var(--cardShadowXSmall);
   /* Neutrals */
   --neutralExtremeLight: #f6f9fc;
   --neutralSuperLight: #f1f4f7;
@@ -40,16 +35,6 @@
 @media (min-width: 768px) {
   :root {
     --cardShadow: var(--cardShadowMedium);
-  }
-}
-@media (min-width: 1280px) {
-  :root {
-    --cardShadow: var(--cardShadowLarge);
-  }
-}
-@media (min-width: 1536px) {
-  :root {
-    --cardShadow: var(--cardShadowXLarge);
   }
 }
 *,
