@@ -7,7 +7,11 @@ async function serveOgImage(ctx: Context): Promise<Response> {
   try {
     const canvas = await createOgImage(ctx.request);
     return new Response(canvas.toBuffer(), {
-      headers: { "content-type": "image/png" },
+      headers: {
+        "content-type": "image/png",
+        "Cache-Control":
+          `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`,
+      },
     });
   } catch {
     throw new Response("Bad Request", { status: 400 });

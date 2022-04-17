@@ -17,14 +17,13 @@ image to make your link stand out from the rest!
 In short, what this service does, is take in a request through its REST API,
 generate an
 [HTML Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) using
-the provided variables and respond with an image having the appropriate image
-properties and headers. Try it out and deploy your own image generator on
+the provided variables and respond with an cached image having the appropriate
+image properties and headers. Try it out and deploy your own image generator on
 [Deno](https://deno.land/).
 
 ## Todo
 
 - More options
-- What about caching?
 - Some browser tests
 - Add markdown's **bold** and _italic_ syntax to the text input.
 
