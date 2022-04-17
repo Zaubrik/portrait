@@ -17,7 +17,7 @@ image to make your link stand out from the rest!
 In short, what this service does, is take in a request through its REST API,
 generate an
 [HTML Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) using
-the provided variables and respond with an cached image having the appropriate
+the provided variables and respond with a cached image having the appropriate
 image properties and headers. Try it out and deploy your own image generator on
 [Deno](https://deno.land/).
 
