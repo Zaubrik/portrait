@@ -86,6 +86,8 @@ niceForm.items = [
     label: "Font Size",
     id: "font-size",
     options: [
+      { data: "80px" },
+      { data: "90px" },
       { data: "100px" },
       { data: "125px" },
       { data: "150px" },

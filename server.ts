@@ -1,4 +1,4 @@
-import { Context, errorFallback, Portal, serveStatic } from "./server_deps.ts";
+import { Context, Portal, serveStatic } from "./server_deps.ts";
 import { createOgImage } from "./mod.ts";
 
 const app = new Portal();
@@ -16,6 +16,5 @@ async function serveOgImage(ctx: Context): Promise<Response> {
 
 app.get({ pathname: "/{:text}.png" }, serveOgImage);
 app.get({ pathname: "*" }, serveStatic(new URL("./static", import.meta.url)));
-app.catch(errorFallback);
 
 await app.listen({ port: 8080 });
