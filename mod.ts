@@ -50,12 +50,12 @@ export async function createOgImage(request: Request) {
   let imageWidth = parseInt(url.searchParams.get("width") || "0");
   let imageHeight = parseInt(url.searchParams.get("height") || "0");
   if (parsedPathname.ext !== ".png") {
-    throw new Error("The file extension of the resource is invalid.");
+    throw new URIError("The file extension of the resource is invalid.");
   }
   if (theme === "light" || theme === "dark") {
     drawBackground(ctx, canvasSize, theme);
   } else {
-    throw new Error("The theme is invalid.");
+    throw new URIError("The theme is invalid.");
   }
   if (imageSrc) {
     const img = await loadImage(imageSrc);
