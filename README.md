@@ -21,6 +21,12 @@ the provided variables and respond with a cached image having the appropriate
 image properties and headers. Try it out and deploy your own image generator on
 [Deno](https://deno.land/).
 
+## Quick start
+
+```bash
+deno task serve
+```
+
 ## Todo
 
 - More options
@@ -32,17 +38,17 @@ image properties and headers. Try it out and deploy your own image generator on
     from the Canvas API and RegExp?
 
   ```ts
-  const regexBold = /\*\*([^*]*)\*\*/g;
-  const regexItalic = /\*([^*]*)\*/g;
+  const regexBold = /\*\*([^*]*)\*\*/g
+  const regexItalic = /\*([^*]*)\*/g
 
   function parse(regExp: RegExp) {
     return (str: string) => {
-      return [...str.matchAll(regExp)];
-    };
+      return [...str.matchAll(regExp)]
+    }
   }
 
-  const parseBold = parse(regexBold);
-  const parseItalic = parse(regexItalic);
+  const parseBold = parse(regexBold)
+  const parseItalic = parse(regexItalic)
 
-  let r1 = parseBold("aaa bb**ff**ccc,c**cc d**dd");
+  let r1 = parseBold("aaa bb**ff**ccc,c**cc d**dd")
   ```
