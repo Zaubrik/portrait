@@ -38,17 +38,17 @@ deno task serve
     from the Canvas API and RegExp?
 
   ```ts
-  const regexBold = /\*\*([^*]*)\*\*/g
-  const regexItalic = /\*([^*]*)\*/g
+  const regexBold = /\*\*([^*]*)\*\*/g;
+  const regexItalic = /\*([^*]*)\*/g;
 
   function parse(regExp: RegExp) {
     return (str: string) => {
-      return [...str.matchAll(regExp)]
-    }
+      return [...str.matchAll(regExp)];
+    };
   }
 
-  const parseBold = parse(regexBold)
-  const parseItalic = parse(regexItalic)
+  const parseBold = parse(regexBold);
+  const parseItalic = parse(regexItalic);
 
-  let r1 = parseBold("aaa bb**ff**ccc,c**cc d**dd")
+  let r1 = parseBold("aaa bb**ff**ccc,c**cc d**dd");
   ```
