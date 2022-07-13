@@ -1,6 +1,7 @@
 import {
   CanvasRenderingContext2D,
   createCanvas,
+  EmulatedCanvas2D,
   loadImage,
   parse,
 } from "./deps.ts";
@@ -32,7 +33,13 @@ function drawBackground(
   }
 }
 
-export async function createOgImage(request: Request) {
+/**
+ * Takes a `Request` and generates dynamic Open Graph images that you can embed
+ * in your html meta tags. It either returns a `EmulatedCanvas2D` or throws an `Error`.
+ */
+export async function createOgImage(
+  request: Request,
+): Promise<EmulatedCanvas2D> {
   const canvasSize: [number, number] = [2048, 1170];
   const defaultHeight = 480;
   const spacing = 200;
@@ -41,7 +48,9 @@ export async function createOgImage(request: Request) {
   const canvas = createCanvas(canvasSize[0], canvasSize[1]);
   const ctx = canvas.getContext("2d");
   const url = new URL(request.url);
-  const parsedPathname = parse(decodeURIComponent(url.pathname));
+  const parsedPathname = url.pathname === "/.png"
+    ? { ext: ".png", name: "" } // Accept empty text.
+    : parse(decodeURIComponent(url.pathname));
   const text = parsedPathname.name;
   const theme = (url.searchParams.get("theme") || defaultTheme)
     .toLowerCase();

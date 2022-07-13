@@ -1,15 +1,15 @@
 {
   "tasks": {
+    "test": "deno test --doc --unstable --allow-all",
     "serve": "deno run -A server.ts",
-    // Needs a tsconfig.json for browser types. Fix soon.
     "bundle": "deno bundle static/src/index.ts > static/dist/index.js"
   },
   "compilerOptions": {
-    // "lib": ["esnext", "dom", "dom.iterable", "deno.ns"],
-    "removeComments": true,
-    "experimentalDecorators": true,
+    "lib": ["esnext", "dom", "dom.iterable", "deno.ns"],
     "strict": true,
-    "strictPropertyInitialization": false,
-    "importsNotUsedAsValues": "preserve"
+    "importsNotUsedAsValues": "preserve",
+    "useUnknownInCatchVariables": true,
+    "noImplicitOverride": false,
+    "checkJs": true
   }
 }

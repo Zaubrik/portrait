@@ -122,6 +122,7 @@ nice-form {
   --niceFormSubmitColor: var(--knockoutColor, var(--backgroundColor));
   --niceFormSubmitMessageColor: var(--accentColor);
   --niceFormSubmitErrorMessageColor: var(--accentColor);
+  --niceFormWidthM:100%;
 }
 nice-form::part(submit) {
   font-family: Arial, Helvetica, sans-serif;

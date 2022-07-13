@@ -1,20 +1,41 @@
-import { Context, Portal, serveStatic } from "./server_deps.ts";
 import { createOgImage } from "./mod.ts";
+import {
+  Context,
+  createHandler,
+  createRoute,
+  listen,
+  serveDir,
+} from "./server_deps.ts";
 
-const app = new Portal();
+function identity<X>(x: X) {
+  return x;
+}
 
-async function serveOgImage(ctx: Context): Promise<Response> {
+async function serveOgImage(ctx: Context): Promise<Context> {
   const canvas = await createOgImage(ctx.request);
-  return new Response(canvas.toBuffer(), {
+  ctx.response = new Response(canvas.toBuffer(), {
     headers: {
       "content-type": "image/png",
       "Cache-Control":
         `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`,
     },
   });
+  return ctx;
 }
 
-app.get({ pathname: "/{:text}.png" }, serveOgImage);
-app.get({ pathname: "*" }, serveStatic(new URL("./static", import.meta.url)));
+async function serveStatic(ctx: Context) {
+  ctx.response = await serveDir(ctx.request, {
+    fsRoot: "./static",
+    showDirListing: true,
+  });
+  return ctx;
+}
 
-await app.listen({ port: 8080 });
+const routeGet = createRoute("GET");
+const serveOgImageRoute = routeGet({ pathname: "/{:text}?.png" })(serveOgImage);
+const serveStaticRoute = routeGet({ pathname: "*", search: "" })(serveStatic);
+const handler = createHandler(Context)(serveStaticRoute, serveOgImageRoute)(
+  identity,
+)(identity);
+
+await listen({ port: 8080 })(handler);
