@@ -3,6 +3,7 @@ import {
   Context,
   createHandler,
   createRoute,
+  fromFileUrl,
   listen,
   serveDir,
 } from "./server_deps.ts";
@@ -25,7 +26,7 @@ async function serveOgImage(ctx: Context): Promise<Context> {
 
 async function serveStatic(ctx: Context) {
   ctx.response = await serveDir(ctx.request, {
-    fsRoot: "./static",
+    fsRoot: fromFileUrl(import.meta.resolve("./static")),
     showDirListing: true,
   });
   return ctx;
@@ -38,4 +39,4 @@ const handler = createHandler(Context)(serveStaticRoute, serveOgImageRoute)(
   identity,
 )(identity);
 
-await listen({ port: 8080 })(handler);
+await listen(handler)({ port: 8080 });
