@@ -1,8 +1,8 @@
 {
   "tasks": {
-    "test": "deno test --doc --unstable --allow-all",
-    "serve": "deno run -A server.ts",
-    "bundle": "deno bundle static/src/index.ts > static/dist/index.js"
+    "test": "deno test --check --doc --unstable --allow-all",
+    "serve": "deno run --check -A server.ts",
+    "bundle": "deno bundle --check static/src/index.ts > static/dist/index.js"
   },
   "compilerOptions": {
     "lib": ["esnext", "dom", "dom.iterable", "deno.ns"],
