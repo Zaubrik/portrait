@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "test": "deno test --check --doc --unstable --allow-all",
+    "test": "deno test --check --unstable --allow-all",
     "serve": "deno run --check -A server.ts",
     "bundle": "deno bundle --check static/src/index.ts > static/dist/index.js"
   },
