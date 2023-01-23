@@ -13,8 +13,8 @@ function identity<X>(x: X) {
 }
 
 async function serveOgImage(ctx: Context): Promise<Context> {
-  const canvas = await createOgImage(ctx.request);
-  ctx.response = new Response(canvas.toBuffer(), {
+  const canvasBuffer = await createOgImage(ctx.request);
+  ctx.response = new Response(canvasBuffer, {
     headers: {
       "content-type": "image/png",
       "Cache-Control":

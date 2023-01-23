@@ -1,7 +1,9 @@
 export {
-  type CanvasRenderingContext2D,
+  CanvasRenderingContext2D,
   createCanvas,
-  type EmulatedCanvas2D,
-  loadImage,
-} from "https://deno.land/x/canvas@v1.4.1/mod.ts";
-export { parse } from "https://deno.land/x/std@0.160.0/path/mod.ts";
+  Image,
+  type ImageFormat,
+  SvgCanvas,
+} from "https://deno.land/x/skia_canvas@0.5.0/mod.ts";
+
+export { parse } from "https://deno.land/x/std@0.173.0/path/mod.ts";
