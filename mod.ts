@@ -2,7 +2,7 @@ import {
   CanvasRenderingContext2D,
   createCanvas,
   Image,
-  ImageFormat,
+  type ImageFormat,
   parse,
 } from "./deps.ts";
 
