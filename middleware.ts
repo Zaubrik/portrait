@@ -1,4 +1,4 @@
-import { createOgImage } from "./mod.ts";
+import { createOgImage } from "./og_image.ts";
 import { type Context, createHttpError, Status } from "./middleware_deps.ts";
 
 /**
