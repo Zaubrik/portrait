@@ -1,4 +1,4 @@
-import { createOgImage } from "./mod.ts";
+import { serveOgImage } from "./middleware.ts";
 import {
   Context,
   createHandler,
@@ -10,18 +10,6 @@ import {
 
 function identity<X>(x: X) {
   return x;
-}
-
-async function serveOgImage(ctx: Context): Promise<Context> {
-  const canvasBuffer = await createOgImage(ctx.request);
-  ctx.response = new Response(canvasBuffer, {
-    headers: {
-      "content-type": "image/png",
-      "Cache-Control":
-        `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`,
-    },
-  });
-  return ctx;
 }
 
 async function serveStatic(ctx: Context) {
