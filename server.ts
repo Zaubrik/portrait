@@ -4,7 +4,6 @@ import {
   createHandler,
   createRoute,
   fromFileUrl,
-  listen,
   serveDir,
 } from "./server_deps.ts";
 
@@ -27,4 +26,4 @@ const handler = createHandler(Context)(serveStaticRoute, serveOgImageRoute)(
   identity,
 )(identity);
 
-await listen(handler)({ port: 8080 });
+Deno.serve({ port: 8080 }, handler);
