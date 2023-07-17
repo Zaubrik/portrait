@@ -2,12 +2,12 @@
 
 Portrait is a service, written in Deno, that generates dynamic
 [Open Graph](http://ogp.me) images that you can embed in your `meta` tags. Try
-it out on [Zaubrik](https://dev.zaubrik.com/portrait/) for free.
+it out on [Zaubrik](https://dev.zaubrik.com/og-image/) for free.
 
 ## What is this?
 
 <img src="./portrait_zaubrik-2022-04-10.png" alt="Portrait preview" width="50%" align="right" style="padding: 12px">
-This is a service that for each keystroke generates customized dynamic
+This is Zaubrik's service that for each keystroke generates customized dynamic
  images that you can embed in your <code>meta</code> tags.
 Lots of services like Twitter, Discord and LinkedIn can render the specified
 image to make your link stand out from the rest!
