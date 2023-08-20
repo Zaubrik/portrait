@@ -35,7 +35,6 @@ function drawBackground(
 }
 
 function isImageFormat(format: string): format is ImageFormat {
-  console.log(imageFormats, format);
   return imageFormats.includes(format as ImageFormat);
 }
 
@@ -68,7 +67,6 @@ export async function createOgImage(request: Request): Promise<Uint8Array> {
   let imageWidth = parseInt(url.searchParams.get("width") || "0");
   let imageHeight = parseInt(url.searchParams.get("height") || "0");
   const imageFormat = hasNoText ? "png" : parsedPathname.ext.slice(1);
-  console.log(parsedPathname, imageFormat, isImageFormat(imageFormat));
   if (isImageFormat(imageFormat)) {
     if (theme === "light" || theme === "dark") {
       drawBackground(ctx, canvasSize, theme);
