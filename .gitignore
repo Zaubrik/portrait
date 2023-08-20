@@ -2,4 +2,3 @@
 !/.github
 !/.gitignore
 deno.lock
-static/dist/index.js

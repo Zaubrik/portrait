@@ -29,6 +29,8 @@ deno task serve
 
 ## Todo
 
+- `deno bundle` seems to be broken. It works with
+  `deno upgrade --version 1.29.0`.
 - More options
 - Some browser tests
 - Add markdown's **bold** and _italic_ syntax to the text input.
