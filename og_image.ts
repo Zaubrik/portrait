@@ -59,14 +59,15 @@ export async function createOgImage(request: Request): Promise<Uint8Array> {
   const ctx = canvas.getContext("2d");
   const url = new URL(request.url);
   const parsedPathname = parsePathname(decodeURIComponent(url.pathname));
-  const text = parsedPathname.name;
+  const hasNoText = isImageFormat(parsedPathname.base.slice(1));
+  const text = hasNoText ? "" : parsedPathname.name;
   const theme = (url.searchParams.get("theme") || defaultTheme)
     .toLowerCase();
   const fontSize = url.searchParams.get("font-size") || defaultFontSize;
   const imageSrc = url.searchParams.get("image");
   let imageWidth = parseInt(url.searchParams.get("width") || "0");
   let imageHeight = parseInt(url.searchParams.get("height") || "0");
-  const imageFormat = parsedPathname.ext ? parsedPathname.ext.slice(1) : "png";
+  const imageFormat = hasNoText ? "png" : parsedPathname.ext.slice(1);
   console.log(parsedPathname, imageFormat, isImageFormat(imageFormat));
   if (isImageFormat(imageFormat)) {
     if (theme === "light" || theme === "dark") {
