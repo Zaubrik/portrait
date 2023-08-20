@@ -66,9 +66,9 @@ export async function createOgImage(request: Request): Promise<Uint8Array> {
   const imageSrc = url.searchParams.get("image");
   let imageWidth = parseInt(url.searchParams.get("width") || "0");
   let imageHeight = parseInt(url.searchParams.get("height") || "0");
-  const imageFormat = parsedPathname.ext.slice(1);
+  const imageFormat = parsedPathname.ext ? parsedPathname.ext.slice(1) : "png";
   console.log(parsedPathname, imageFormat, isImageFormat(imageFormat));
-  if (isImageFormat(imageFormat) || imageFormat === "") {
+  if (isImageFormat(imageFormat)) {
     if (theme === "light" || theme === "dark") {
       drawBackground(ctx, canvasSize, theme);
     } else {
