@@ -6,4 +6,4 @@ export {
   SvgCanvas,
 } from "https://deno.land/x/skia_canvas@0.5.4/mod.ts";
 
-export { parse } from "https://deno.land/x/std@0.194.0/path/mod.ts";
+export { parse } from "https://deno.land/x/std@0.202.0/path/mod.ts";

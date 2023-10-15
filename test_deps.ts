@@ -1,7 +1,7 @@
 export {
   assertEquals,
   assertRejects,
-} from "https://deno.land/std@0.194.0/testing/asserts.ts";
+} from "https://deno.land/std@0.202.0/testing/asserts.ts";
 
 export const connInfo = {
   localAddr: { transport: "tcp" as const, hostname: "127.0.0.1", port: 8080 },

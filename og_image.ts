@@ -40,7 +40,7 @@ function isImageFormat(format: string): format is ImageFormat {
 
 function parsePathname(pathname: string) {
   return imageFormats.some((format) => "/." + format === pathname)
-    ? { ext: pathname.slice(1), name: "" } // Accept empty text.
+    ? { ext: pathname.slice(1), base: pathname.slice(1), name: "" } // Accept empty text.
     : parse(pathname);
 }
 
