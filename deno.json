@@ -10,6 +10,6 @@
     "useUnknownInCatchVariables": true,
     "verbatimModuleSyntax": true,
     "noImplicitOverride": false,
-    "checkJs": true
+    "checkJs": false
   }
 }

@@ -1079,7 +1079,7 @@ SvgButton = __decorate2([
 ], SvgButton);
 const niceForm = document.getElementById("ogImageForm");
 const ogImagePreview = document.getElementById("ogImagePreview");
-const defaultImageUrl = "https://deno.land/images/artwork/hashrock_simple.png";
+const defaultImageUrl = "https://dev.zaubrik.com/assets@v0.0.8/logo/logo_ohne_text.png";
 function update(img) {
     return (labeledControls)=>{
         const input = labeledControls.getInput();

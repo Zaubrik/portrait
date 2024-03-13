@@ -18,8 +18,10 @@ export async function serveOgImage<C extends Context>(ctx: C): Promise<C> {
           `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`,
       },
     });
+    console.log("canvas");
     return ctx;
   } catch (error: unknown) {
+    console.log("error", error);
     throw error instanceof URIError
       ? createHttpError(Status.BadRequest, error.message)
       : error instanceof URIError
