@@ -50,6 +50,7 @@ function copyOgImageOnEvent() {
 /* Adopted from https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript/33928558#33928558 */
 function copyToClipboardLegacy(text: string) {
   // @ts-ignore: external code
+  // deno-lint-ignore no-window
   if (window.clipboardData && window.clipboardData.setData) {
     // @ts-ignore: external code
     return window.clipboardData.setData("Text", text);
